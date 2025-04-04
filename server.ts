@@ -7,6 +7,7 @@ import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 import Router from '@koa/router';
 import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken'
 
 //import routes
 //import bookRoutes from "./src/routes/bookRoutes";
