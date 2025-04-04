@@ -30,8 +30,19 @@ const app = new Koa();
 const router = new Router();
 
 // Define routes
-router.get('/', async (ctx) => {
-  ctx.body = 'Hello from the homepage!';
+
+router.get('/login', async (ctx) => {
+  // Access the request
+  const { headers, method, url } = ctx.request;
+
+  // You can use these for logging/debugging if needed
+  console.log('Request:', method, url);
+  console.log('User-Agent:', headers['user-agent']);
+
+  // Send response
+  ctx.status = 200;
+  ctx.type = 'json';
+  ctx.body = 'hello there'
 });
 
 //Use CORS
