@@ -12,17 +12,6 @@ import jwt from 'jsonwebtoken'
 //import routes
 //import bookRoutes from "./src/routes/bookRoutes";
 
-/*import Prisma client
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
-
-// Gracefully close Prisma connection when shutting down
-process.on("SIGINT", async () => {
-  await prisma.$disconnect();
-  console.log("Prisma disconnected. Server shutting down.");
-  process.exit(0);
-});*/
-
 //allow environment variables
 dotenv.config();
 
