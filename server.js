@@ -1,6 +1,7 @@
 //import stuff
 import cors from 'cors'
 import dotenv from 'dotenv';
+import connectDB from './db.js';
 import authRoutes from "./src/routes/auth.js";
 import express from 'express';
 
@@ -17,6 +18,9 @@ app.use(cors({
     allowHeaders: ['Content-Type', 'Authorization'],
     credentials: true
   }));
+
+// Middleware for parsing JSON bodies
+app.use(express.json());
 
 // Connect to MongoDB
 connectDB();
