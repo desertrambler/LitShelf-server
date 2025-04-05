@@ -18,10 +18,14 @@ const router = new Router();
 
 //Use CORS
 app.use(cors({
+  origin: 'http://localhost:5173',
   allowMethods: ['GET', 'POST'],
   allowHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+
+//force HTTPS
+app.use(forceHttps());
 
 //need this to parse request bodies
 app.use(bodyParser());
