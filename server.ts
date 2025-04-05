@@ -2,7 +2,6 @@
 
 //import stuff
 import Koa from 'koa';
-import path from 'path';
 import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 import Router from '@koa/router';
