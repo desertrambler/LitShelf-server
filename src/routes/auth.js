@@ -1,11 +1,14 @@
 import express from 'express';
 import User from '../models/User.js';
-const bcrypt = require('bcryptjs');
+import bcrypt from 'bcryptjs';
 
 const router = express.Router();
 
+// Middleware to parse JSON bodies (use built-in Express 4.16+ middleware)
+router.use(express.json()); // This will parse JSON bodies for the routes in this router
+
 // Route for user registration
-app.get('/auth/register_user', async (req, res) => {
+router.post('/register_user', async (req, res) => {
   const { username = 'brokli', email = 'brokli', password = 'brokli' } = req.body;
 
   // Validate input
