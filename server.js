@@ -24,8 +24,8 @@ app.use(cors({
   credentials: true
 }));
 
-//force HTTPS
-app.use(forceHttps());
+//force HTTPS - USE IN PROD
+//app.use(forceHttps());
 
 //need this to parse request bodies
 app.use(bodyParser());
