@@ -1,4 +1,4 @@
-# Node modules
+# Node.js dependencies
 node_modules/
 
 # Logs
@@ -7,48 +7,33 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-
-# Runtime data
-pids/
-*.pid
-*.seed
-*.pid.lock
 
 # Environment files
 .env
-.env.local
-.env.*.local
+.env.* 
 
-# Build output (from tsc or bundlers)
-dist/
-build/
-out/
+# Dependency directories
+jspm_packages/
 
-# Coverage directory
+# Coverage directory used by testing tools like Mocha or Jest
 coverage/
 
-# Debug folders
+# Build output
+dist/
+build/
+
+# .vscode directory (if using Visual Studio Code)
 .vscode/
-.idea/
 
-# TypeScript cache
-*.tsbuildinfo
-
-# Optional caches
-.npm/
-.eslintcache
-.stylelintcache
-
-# OS-specific files
+# MacOS system files
 .DS_Store
+
+# Windows system files
 Thumbs.db
 
-# PM2 logs and files
-.pids
-*.log
-*.gz
+# NPM package lock files (Optional, include if you prefer to not track them)
+package-lock.json
+yarn.lock
 
-# Koa-specific (if used)
-tmp/
-public/uploads/
+# TypeScript build artifacts (if you're using TypeScript)
+*.tsbuildinfo
