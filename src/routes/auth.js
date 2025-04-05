@@ -1,23 +1,21 @@
-import Router from "koa-router";
 import User from '../models/User.js';
 import { hashPassword } from "../utils/password.js";
 
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 
-// Register
-router.post("/register", async (ctx) => {
-  let today = new Date();
-  const { username, email, password } = ctx.request.body;
+// Example: Route for user registration
+router.post('/register', async (req, res) => {
+  const { name, email, password } = req.body;
   const existing = await User.findOne({ email });
-  if (existing) {
-    ctx.throw(400, "User already exists");
-  }
-
-  const { hash, salt } = hashPassword(password);
-  const user = new User({ username, email, hash, salt });
-  await user.save();
-
-  ctx.body = { message: "User registered" };
+    if (existing) {
+      ctx.throw(400, "User already exists");
+    }
+  
+    const { hash, salt } = hashPassword(password);
+    const user = new User({ username, email, hash, salt });
+    await user.save();
+    res.send("uesr registered");
 });
 
-export default router;
+module.exports = router;

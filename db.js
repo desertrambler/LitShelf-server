@@ -1,8 +1,16 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 
-export default async function connectToDB() {
-  await mongoose.connect("mongodb://localhost:27017/LitShelf", {
-    dbName: "LitShelf",
-  });
-  console.log("✅ Connected to MongoDB");
-}
+const connectDB = async () => {
+  try {
+    await mongoose.connect('mongodb://localhost:27017/LitShelf', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('MongoDB connected successfully!');
+  } catch (err) {
+    console.error('Error connecting to MongoDB:', err.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
