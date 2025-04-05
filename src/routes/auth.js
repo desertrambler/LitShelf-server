@@ -5,7 +5,7 @@ import bcrypt from 'bcryptjs';
 const router = express.Router();
 
 // Middleware to parse JSON bodies (use built-in Express 4.16+ middleware)
-router.use(express.json()); // This will parse JSON bodies for the routes in this router
+router.use(express.json());
 
 // Route for user registration
 router.post('/register_user', async (req, res) => {
@@ -42,5 +42,19 @@ router.post('/register_user', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
+//Decrypt function
+/*async function verifyPassword(inputPassword, storedHash) {
+  try {
+    const match = await bcrypt.compare(inputPassword, storedHash);
+    if (match) {
+      console.log('Password is correct!');
+    } else {
+      console.log('Incorrect password');
+    }
+  } catch (error) {
+    console.error('Error verifying password:', error);
+  }
+}*/
 
 export default router;
